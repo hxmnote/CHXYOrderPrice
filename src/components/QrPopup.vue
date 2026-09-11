@@ -1,11 +1,11 @@
 <template>
-  <van-popup :show="modelValue" position="center" round :style="{ padding: '24px 20px 28px', width: '320px' }" @update:show="val => emit('update:modelValue', val)">
+  <van-popup :show="modelValue" position="center" round :style="{ padding: '24px 20px 28px', width: '320px', background: '#fff' }" @update:show="val => emit('update:modelValue', val)">
     <div class="qr-popup">
       <div class="qr-popup-header">
         <div class="qr-popup-title">
-          <van-icon name="star" color="#ffb6c1" />
+          <van-icon name="star" color="#a78bfa" />
           <span>扫码下单</span>
-          <van-icon name="star" color="#ffb6c1" />
+          <van-icon name="star" color="#a78bfa" />
         </div>
         <div class="qr-popup-close" @click="close">
           <van-icon name="cross" />
@@ -72,14 +72,19 @@ const close = () => {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #ffb6c1;
+  border: 2px solid #a78bfa;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ff8fa3;
+  color: #7c6aff;
   font-size: 18px;
   cursor: pointer;
-  background: #fff;
+  background: #f0edff;
+  transition: all 0.2s;
+}
+
+.qr-popup-close:hover {
+  background: #e4deff;
 }
 
 .qr-popup-body {
@@ -87,12 +92,11 @@ const close = () => {
 }
 
 .qr-code-box {
-  background: #fff;
-  border: 1px solid #f0f0f0;
+  background: #f0edff;
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(124, 106, 255, 0.08);
 }
 
 .qr-code {
@@ -106,7 +110,7 @@ const close = () => {
     repeating-linear-gradient(0deg, #000 0 8px, transparent 8px 16px);
   background-size: 2px 2px, 2px 2px, 10px 10px, 10px 10px;
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .qr-pattern {
@@ -147,13 +151,14 @@ const close = () => {
   width: 48px;
   height: 48px;
   background: #fff;
-  border: 2px solid #000;
+  border: 2px solid #7c6aff;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: #000;
+  color: #7c6aff;
+  box-shadow: 0 0 12px rgba(124, 106, 255, 0.2);
 }
 
 .qr-popup-tip {
